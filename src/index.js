@@ -8,6 +8,10 @@ const bare = createBareServer("/bare/");
 const app = express();
 
 app.use(express.static("./public"));
+
+app.get("/W/tiktok.html", (req, res) => {
+  res.sendFile("tiktok.html", { root: "./public" });
+});
 app.use("/uv/", express.static(uvPath));
 
 // Error for everything else
