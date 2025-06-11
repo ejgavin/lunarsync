@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --background: #181926;
+  --background2: #24273a;
+  --background3: #363a4f;
+  --theme: rgb(138, 173, 244);
+  --shadow: rgba(138, 173, 244, 0.5);
+  --text: #cad3f5;
+  --placeholder: #cad3f5;
+  --text-secondary: #181926;
+  --nav-btn: #1e2030;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  letter-spacing: 0 !important;
+}
+
+body {
+  background: var(--background);
+  font-weight: 400;
+}
+
+.nav {
+  top: 0px;
+  position: fixed;
+  z-index: 999999;
+  margin: 0px;
+  background: var(--background);
+  justify-content: space-between;
+  height: 70px;
+  border-radius: 0px;
+  width: 100%;
+  border-bottom: 1px solid var(--theme);
+}
+
+.nav,
+.nav .nav-links {
+  display: flex;
+  align-items: center;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+.nav .logo .logo-image {
+  height: 30px;
+  width: 30px;
+}
+.nav .logo {
+  font-size: 18px;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+  display: flex;
+  padding: 8px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 10px;
+  transition: 300ms;
+}
+.nav .logo:hover {
+  background: var(--background2);
+}
+.nav .logo:active {
+  transform: scale(0.95);
+}
+.nav .nav-links {
+  column-gap: 20px;
+  list-style: none;
+}
+.nav .nav-links a {
+  transition: 250ms;
+}
+
+.nav .left {
+  display: flex;
+  gap: 15px;
+}
+
+.nav .nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.nav .nav-btn-text {
+  font-weight: 700;
+  line-height: 1;
+}
+
+.nav .nav-btn:hover {
+  background: var(--background2);
+}
+
+.nav .nav-btn:focus {
+  transition: 100ms;
+  transform: scale(0.95);
+}
+
+.nav .navOpenBtn,
+.nav .navCloseBtn {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--theme);
+  border-radius: 8px;
+  background-clip: content-box;
+  border: 4px solid transparent;
+}
+
+#clock {
+  color: var(--text);
+  margin: none;
+}
+
+.nav .right {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav .left {
+  display: flex;
+  align-items: center;
+}
+
+.footer {
+  background: var(--background2);
+  color: var(--text);
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 20px 200px;
+  border-radius: 20px;
+}
+
+.footer .footer-branding {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-direction: row;
+}
+
+.footer .footer-branding .footer-logo {
+  height: 50px;
+  width: 50px;
+}
+
+.footer h5 {
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.footer h4 {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/* responsive */
+@media screen and (max-width: 2000px) {
+  .nav {
+    padding: 11px 30px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .nav {
+    padding: 11px 30px;
+  }
+
+  .nav #clock {
+    display: none;
+  }
+
+  .footer {
+    margin: 20px 100px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+
+  .nav .navOpenBtn,
+  .nav .navCloseBtn {
+    display: block;
+  }
+
+  .nav {
+    padding: 15px 20px;
+  }
+
+  .nav .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    max-width: 280px;
+    width: 100%;
+    padding-top: 100px;
+    row-gap: 30px;
+    flex-direction: column;
+    background-color: var(--background);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    z-index: 100;
+  }
+
+  .nav.openNav .nav-links {
+    left: 0;
+  }
+
+  .nav .navOpenBtn {
+    color: var(--text);
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .nav .navCloseBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: var(--text);
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .footer {
+    margin: 20px 50px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .nav {
+    margin: 15px;
+    width: calc(100vw - 30px);
+  }
+}
